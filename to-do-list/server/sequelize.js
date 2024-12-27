@@ -1,9 +1,9 @@
 const { Sequelize } = require('sequelize');
 
-// Replace with your database details
-const sequelize = new Sequelize('sys', 'root', 'Kevin123!', {
-  host: 'localhost',
-  dialect: 'mysql', // Use 'mysql' since we're connecting to a MySQL database
+// Replace hard-coded credentials with environment variables
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
+  host: process.env.DB_HOST,
+  dialect: 'mysql',
 });
 
 // Test the connection
